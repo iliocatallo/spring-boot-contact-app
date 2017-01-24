@@ -1,0 +1,27 @@
+plugins {
+    // https://plugins.gradle.org/plugin/org.springframework.boot
+    id "org.springframework.boot" version "1.4.3.RELEASE"
+}
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'org.springframework.boot'
+jar {
+    baseName = 'contact'
+    version =  '1.0.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("org.thymeleaf:thymeleaf-spring4")
+}
+
+springBoot { 
+    mainClass = 'contact.ContactApplication' // used by the spring boot plugin
+}
+
+mainClassName = 'contact.ContactApplication' // used by the application plugin
