@@ -1,11 +1,11 @@
 plugins {
-    // https://plugins.gradle.org/plugin/org.springframework.boot
-    id "org.springframework.boot" version "1.4.3.RELEASE"
+    id "org.springframework.boot" version "2.1.0.RELEASE"
 }
 
 apply plugin: 'java'
 apply plugin: 'application'
-apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
 jar {
     baseName = 'contact'
     version =  '1.0.0'
@@ -17,11 +17,7 @@ repositories {
 
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
-    compile("org.thymeleaf:thymeleaf-spring4")
+    compile("org.thymeleaf:thymeleaf-spring5")
 }
 
-springBoot { 
-    mainClass = 'contact.ContactApplication' // used by the spring boot plugin
-}
-
-mainClassName = 'contact.ContactApplication' // used by the application plugin
+mainClassName = 'contact.ContactApplication' 
